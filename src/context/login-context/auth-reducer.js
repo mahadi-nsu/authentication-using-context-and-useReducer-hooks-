@@ -2,7 +2,7 @@ import { LOGIN, LOGOUT } from "./auth-action";
 
 const authreducer = (state, action) => {
   switch (action.type) {
-    case "LOGIN":
+    case LOGIN:
       localStorage.setItem("user", JSON.stringify(action.payload.user));
       localStorage.setItem("token", JSON.stringify(action.payload.token));
 
@@ -13,7 +13,7 @@ const authreducer = (state, action) => {
         token: action.payload.token,
       };
 
-    case "LOGOUT":
+    case LOGOUT:
       localStorage.clear();
       return {
         ...state,
